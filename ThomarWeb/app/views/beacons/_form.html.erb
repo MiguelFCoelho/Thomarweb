@@ -1,0 +1,52 @@
+<%= form_for(beacon) do |f| %>
+  <% if beacon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(beacon.errors.count, "error") %> prohibited this beacon from being saved:</h2>
+
+      <ul>
+      <% beacon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uuid %>
+    <%= f.text_area :uuid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :manufacturer %>
+    <%= f.text_area :manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :battery %>
+    <%= f.text_area :battery %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_area :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
