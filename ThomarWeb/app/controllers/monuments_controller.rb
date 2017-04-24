@@ -10,6 +10,7 @@ class MonumentsController < ApplicationController
   # GET /monuments/1
   # GET /monuments/1.json
   def show
+    @monument = Monument.find(params[:id])
   end
 
   # GET /monuments/new
@@ -19,6 +20,7 @@ class MonumentsController < ApplicationController
 
   # GET /monuments/1/edit
   def edit
+    @monument = Monument.find(params[:id])
   end
 
   # POST /monuments
@@ -69,6 +71,6 @@ class MonumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def monument_params
-      params.require(:monument).permit(:name, :description, :image, :longitude, :latitude, :address)
+      params.require(:monument).permit(:name, :description, :image, :longitude, :latitude, :address, :category_id)
     end
 end

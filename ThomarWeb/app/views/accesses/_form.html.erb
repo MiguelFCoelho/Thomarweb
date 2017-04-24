@@ -26,6 +26,17 @@
     <%= f.text_area :os %>
   </div>
 
+  <div class="field">
+    <%= f.label :uuid %>
+    <%= f.text_area :uuid %>
+  </div>
+
+<div class="row">
+      <%= f.label :"Beacons" %>
+    <%= f.select  :beacon_id, Beacon.all.collect { |s| [s.name, s.id] }%>
+    </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

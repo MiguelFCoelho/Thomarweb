@@ -36,6 +36,20 @@
     <%= f.text_field :latitude %>
   </div>
 
+  <div class="row">
+ <fieldset>
+      <%= f.label :"Monumento pertencente" %>
+    <%= f.select :monument_id, Monument.all.collect { |s| [s.name, s.id]}%>
+    </fieldset>
+    </div>
+
+    <div class="row">
+ <fieldset>
+      <%= f.label :"Beacon pertencente" %>
+    <%= f.select :beacon_id, Beacon.all.collect { |s| [s.uuid, s.id]}%>
+    </fieldset>
+    </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

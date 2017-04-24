@@ -25,5 +25,15 @@
   <%= @poi.latitude %>
 </p>
 
+<p>
+  <strong>Monumento:</strong>
+  <%= @poi.monument.name %>
+</p>
+
+<p>
+  <strong>Beacon:</strong>
+  <%= @poi.beacon.uuid %>
+</p>
+
 <%= link_to 'Edit', edit_poi_path(@poi) %> |
 <%= link_to 'Back', pois_path %>

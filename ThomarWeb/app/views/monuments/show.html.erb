@@ -30,5 +30,10 @@
   <%= @monument.address %>
 </p>
 
+<p>
+  <strong>Categoria:</strong>
+  <%= @monument.category.name %>
+</p>
+
 <%= link_to 'Edit', edit_monument_path(@monument) %> |
 <%= link_to 'Back', monuments_path %>

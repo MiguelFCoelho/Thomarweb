@@ -10,6 +10,7 @@ class AccessesController < ApplicationController
   # GET /accesses/1
   # GET /accesses/1.json
   def show
+    @access = Access.find(params[:id])
   end
 
   # GET /accesses/new
@@ -19,6 +20,7 @@ class AccessesController < ApplicationController
 
   # GET /accesses/1/edit
   def edit
+    @access = Access.find(params[:id])
   end
 
   # POST /accesses
@@ -69,6 +71,6 @@ class AccessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def access_params
-      params.require(:access).permit(:date, :nationality, :os)
+      params.require(:access).permit(:date, :nationality, :os, :beacon_id)
     end
 end

@@ -41,6 +41,13 @@
     <%= f.text_area :address %>
   </div>
 
+ <div class="row">
+    <fieldset>
+      <%= f.label :"Categoria do monumento" %>
+      <%= f.select :category_id, Category.all.collect { |s| [s.name, s.id]}%>
+    </fieldset>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423175752) do
+ActiveRecord::Schema.define(version: 20170423234834) do
 
   create_table "accesses", force: :cascade do |t|
     t.datetime "date"
@@ -18,16 +18,15 @@ ActiveRecord::Schema.define(version: 20170423175752) do
     t.text     "os"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.text     "uuid"
+    t.integer  "beacon_id"
+    t.index ["beacon_id"], name: "index_accesses_on_beacon_id"
   end
 
   create_table "beacons", force: :cascade do |t|
     t.text     "uuid"
     t.text     "manufacturer"
     t.text     "battery"
-    t.float    "longitude"
-    t.float    "latitude"
-    t.text     "image"
-    t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -47,6 +46,8 @@ ActiveRecord::Schema.define(version: 20170423175752) do
     t.text     "address"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_monuments_on_category_id"
   end
 
   create_table "pois", force: :cascade do |t|
@@ -57,6 +58,10 @@ ActiveRecord::Schema.define(version: 20170423175752) do
     t.float    "latitude"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "monument_id"
+    t.integer  "beacon_id"
+    t.index ["beacon_id"], name: "index_pois_on_beacon_id"
+    t.index ["monument_id"], name: "index_pois_on_monument_id"
   end
 
 end

@@ -10,6 +10,7 @@ class BeaconsController < ApplicationController
   # GET /beacons/1
   # GET /beacons/1.json
   def show
+    @beacon = Beacon.find(params[:id])
   end
 
   # GET /beacons/new
@@ -19,6 +20,7 @@ class BeaconsController < ApplicationController
 
   # GET /beacons/1/edit
   def edit
+    @beacon = Beacon.find(params[:id])
   end
 
   # POST /beacons
@@ -69,6 +71,6 @@ class BeaconsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beacon_params
-      params.require(:beacon).permit(:uuid, :manufacturer, :battery, :longitude, :latitude, :image, :description)
+      params.require(:beacon).permit(:uuid, :manufacturer, :battery, :monument_id)
     end
 end

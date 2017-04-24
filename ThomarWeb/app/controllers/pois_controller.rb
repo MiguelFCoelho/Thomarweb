@@ -10,6 +10,7 @@ class PoisController < ApplicationController
   # GET /pois/1
   # GET /pois/1.json
   def show
+    @poi = Poi.find(params[:id])
   end
 
   # GET /pois/new
@@ -19,6 +20,7 @@ class PoisController < ApplicationController
 
   # GET /pois/1/edit
   def edit
+     @poi = Poi.find(params[:id])
   end
 
   # POST /pois
@@ -69,6 +71,6 @@ class PoisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poi_params
-      params.require(:poi).permit(:name, :description, :image, :longitude, :latitude)
+      params.require(:poi).permit(:name, :description, :image, :longitude, :latitude, :monument_id, :beacon_id)
     end
 end
