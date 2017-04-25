@@ -1,4 +1,7 @@
 class MonumentsController < ApplicationController
+
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   before_action :set_monument, only: [:show, :edit, :update, :destroy]
 
   # GET /monuments

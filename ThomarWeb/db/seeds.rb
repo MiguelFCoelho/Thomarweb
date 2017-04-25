@@ -12,6 +12,7 @@ Monument.destroy_all
 Beacon.destroy_all
 Poi.destroy_all
 
+@u1 = User.create(email:'teste@teste.pt',password:'123456')
 
 @c1 = Category.create(name:'Castelo')
 

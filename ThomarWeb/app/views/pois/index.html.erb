@@ -27,13 +27,18 @@
         <td><%= poi.monument.name %></td>
         <td><%= poi.beacon.uuid %></td>
         <td><%= link_to 'Show', poi %></td>
+
+        <% if user_signed_in?%>
         <td><%= link_to 'Edit', edit_poi_path(poi) %></td>
         <td><%= link_to 'Destroy', poi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if user_signed_in?%>
 <%= link_to 'New Poi', new_poi_path %>
+<%end%>
+
