@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425153129) do
+ActiveRecord::Schema.define(version: 20170426225719) do
 
   create_table "accesses", force: :cascade do |t|
     t.datetime "date"
@@ -57,13 +57,16 @@ ActiveRecord::Schema.define(version: 20170425153129) do
   create_table "monuments", force: :cascade do |t|
     t.text     "name"
     t.text     "description"
-    t.text     "image"
     t.float    "longitude"
     t.float    "latitude"
     t.text     "address"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "category_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_monuments_on_category_id"
   end
 

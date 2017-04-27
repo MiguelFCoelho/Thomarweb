@@ -30,6 +30,8 @@ class MonumentsController < ApplicationController
   # POST /monuments.json
   def create
     @monument = Monument.new(monument_params)
+    @monument.image
+    @monument.save
 
     respond_to do |format|
       if @monument.save

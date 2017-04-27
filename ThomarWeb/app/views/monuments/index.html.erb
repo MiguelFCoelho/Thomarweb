@@ -21,7 +21,7 @@
       <tr>
         <td><%= monument.name %></td>
         <td><%= monument.description %></td>
-        <td><%= monument.image %></td>
+        <td><%= image_tag monument.image.url(:medium) %></td>
         <td><%= monument.longitude %></td>
         <td><%= monument.latitude %></td>
         <td><%= monument.address %></td>

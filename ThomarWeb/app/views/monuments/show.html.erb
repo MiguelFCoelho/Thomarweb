@@ -10,10 +10,9 @@
   <%= @monument.description %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @monument.image %>
-</p>
+
+<td><%= image_tag @monument.image.url(:medium) %></td>
+
 
 <p>
   <strong>Longitude:</strong>
