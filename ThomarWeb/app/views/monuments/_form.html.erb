@@ -1,0 +1,61 @@
+<%= form_for(monument) do |f| %>
+  <% if monument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(monument.errors.count, "error") %> prohibited this monument from being saved:</h2>
+
+      <ul>
+      <% monument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+<div>
+  
+  <%= f.file_field :image %>
+
+</div>
+
+  <div class="field">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </div>
+
+ <div class="row">
+    <fieldset>
+      <%= f.label :"Categoria do monumento" %>
+      <%= f.select :category_id, Category.all.collect { |s| [s.name, s.id]}%>
+    </fieldset>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<div class="card">
+  <div class="card-block">
+    <div id="map"></div>
+  </div>
+</div>

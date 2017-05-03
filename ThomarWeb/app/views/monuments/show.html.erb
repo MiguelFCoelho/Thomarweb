@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @monument.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @monument.description %>
+</p>
+
+
+<td><%= image_tag @monument.image.url(:medium) %></td>
+
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @monument.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @monument.latitude %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @monument.address %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @monument.category.name %>
+</p>
+
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@monument.latitude},#{@monument.longitude}&markers=#{@monument.latitude},#{@monument.longitude}&zoom=16&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8"%>
+
+<% if user_signed_in?%>
+<%= link_to 'Edit', edit_monument_path(@monument) %> |
+<%end%>
+<%= link_to 'Back', monuments_path %>

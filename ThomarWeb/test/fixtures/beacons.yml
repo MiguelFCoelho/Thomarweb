@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyText
+  manufacturer: MyText
+  battery: MyText
+  longitude: 1.5
+  latitude: 1.5
+  image: MyText
+  description: MyText
+
+two:
+  uuid: MyText
+  manufacturer: MyText
+  battery: MyText
+  longitude: 1.5
+  latitude: 1.5
+  image: MyText
+  description: MyText

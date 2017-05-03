@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @beacon.uuid %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @beacon.manufacturer %>
+</p>
+
+<p>
+  <strong>Battery:</strong>
+  <%= @beacon.battery %>
+</p>
+
+<% if user_signed_in?%>
+<%= link_to 'Edit', edit_beacon_path(@beacon) %> |
+<%end%>
+<%= link_to 'Back', beacons_path %>
