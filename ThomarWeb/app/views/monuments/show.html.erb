@@ -34,6 +34,8 @@
   <%= @monument.category.name %>
 </p>
 
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@monument.latitude},#{@monument.longitude}&markers=#{@monument.latitude},#{@monument.longitude}&zoom=16&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8"%>
+
 <% if user_signed_in?%>
 <%= link_to 'Edit', edit_monument_path(@monument) %> |
 <%end%>
