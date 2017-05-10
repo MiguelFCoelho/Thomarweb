@@ -8,7 +8,16 @@ class MonumentsController < ApplicationController
   # GET /monuments.json
   def index
     @monuments = Monument.all
-  end
+    @hash = Gmaps4rails.build_markers(@monuments) do |monument, marker|
+  marker.lat monument.latitude
+  marker.lng monument.longitude
+  marker.infowindow monument.description
+end
+end
+    # respond_to do |format|
+    #   format.html
+    #   format.json {render json: @monuments}
+
 
   # GET /monuments/1
   # GET /monuments/1.json

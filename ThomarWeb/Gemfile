@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'gmaps4rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'geocoder'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"

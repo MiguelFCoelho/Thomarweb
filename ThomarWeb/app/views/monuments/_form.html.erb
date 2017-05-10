@@ -1,3 +1,5 @@
+
+
 <%= form_for(monument) do |f| %>
   <% if monument.errors.any? %>
     <div id="error_explanation">
@@ -55,6 +57,10 @@
 <% end %>
 
 <div class="card">
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8&callback=initMap"
+          async defer></script>
+
   <div class="card-block">
     <div id="map"></div>
   </div>
