@@ -56,11 +56,11 @@
   </div>
 <% end %>
 
+<%#Mapa da google para podermos clicar nele e as coordenadas passarem diretamente para os campos%>
+<%# O script tem de estar dentro da div porque usamos dois métodos diferentes para chamar a api%>
 <div class="card">
-
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8&callback=initMap"
           async defer></script>
-
   <div class="card-block">
     <div id="map"></div>
   </div>
