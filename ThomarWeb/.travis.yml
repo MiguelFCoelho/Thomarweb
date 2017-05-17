@@ -7,6 +7,6 @@ rvm:
 # script: bundle exec rspec spec
 
  script:
-   - bundle exec rake
+   - bundle exec rake rspec spec
   # - bin/rake db:migrate rails_env=test
   # - bin/rake
