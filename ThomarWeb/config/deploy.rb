@@ -1,8 +1,8 @@
 # Change these
-server 'your_server_ip', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '162.243.103.99', port: 80, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'https://github.com/NearDeath/Projeto-Final.git'
-set :application,     'Projeto-Final'
+set :repo_url,        'https://github.com/NearDeath/Thomarweb.git'
+set :application,     'Thomarweb'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
